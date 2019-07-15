@@ -6,8 +6,8 @@ routes.get('/', (req, res) => {
     return res.json({ hello: "World!" });
 });
 
-routes.post('/post', multer(multerConfig).single('file'), (req, res) => {
-    
+routes.post('/posts', multer(multerConfig).single('file'), (req, res) => {
+    return res.json({ file: req.file });
 });
 
 module.exports = routes;
